@@ -1,11 +1,11 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
-    //¹ÜÀí±³°üÓÃÎÒ£¬¹ÒÔØµ½ÏàÓ¦¶ÔÏóÉÏ
+    //ç®¡ç†èƒŒåŒ…ç”¨æˆ‘ï¼ŒæŒ‚è½½åˆ°ç›¸åº”å¯¹è±¡ä¸Š
     static InventoryManager instance;
     public Inventory GoodsBag;
     public GameObject slotGrids;
@@ -20,7 +20,7 @@ public class InventoryManager : MonoBehaviour
         RefreshItem();
     }
 
-    public static void UpdateItemInfo(string ItemDescription, int slotNum)//½éÉÜ£¬ÊıÁ¿
+    public static void UpdateItemInfo(string ItemDescription, int slotNum)//ä»‹ç»ï¼Œæ•°é‡
     {
         instance.itemInformation.text = ItemDescription;
         instance.slotNum.text = "Have: " + slotNum.ToString();

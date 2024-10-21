@@ -1,11 +1,11 @@
-using System.Collections;
+锘縰sing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
 public class Sound
 {
-    //我是一个类
+    //鎴戞槸涓�涓被
     public string name;
     public AudioClip clip;
 }

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void CheckGround()//µØÃæ¼ì²â
+    void CheckGround()//åœ°é¢æ£€æµ‹
     {
         isGround = myFeet.IsTouchingLayers(LayerMask.GetMask("Ground")) || myFeet.IsTouchingLayers(LayerMask.GetMask("oneSideBoard"));
         isOneSide = myFeet.IsTouchingLayers(LayerMask.GetMask("oneSideBoard"));
@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void Filp()//·­×ª
+    void Filp()//ç¿»è½¬
     {
         bool playerXAxisSpeed = Mathf.Abs(myRb2D.velocity.x) > Mathf.Epsilon;
         if (playerXAxisSpeed)
@@ -75,7 +75,7 @@ public class Player : MonoBehaviour
             }
         }
     }
-    void Run()//ÒÆ¶¯
+    void Run()//ç§»åŠ¨
     {
         float moveDir = Input.GetAxis("Horizontal");
         Vector2 playerVel = new Vector2(moveDir * runSpeed, myRb2D.velocity.y);
@@ -107,21 +107,21 @@ public class Player : MonoBehaviour
         {
             if (myRb2D.velocity.y <= 0.0f)
             {
-                //¶¯»­»ú´ý²¹È«
+                //åŠ¨ç”»æœºå¾…è¡¥å…¨
             }
         }
         if (jumpChance == 1)
         {
             if (myRb2D.velocity.y <= 0.0f)
             {
-                //¶¯»­»ú´ý²¹È«
+                //åŠ¨ç”»æœºå¾…è¡¥å…¨
             }
         }
 
 
     }
 
-    void oneSideCheck()//µ¥Ïò°å¼ì²â
+    void oneSideCheck()//å•å‘æ¿æ£€æµ‹
     {
         if (isGround && gameObject.layer != LayerMask.NameToLayer("Player"))
         {

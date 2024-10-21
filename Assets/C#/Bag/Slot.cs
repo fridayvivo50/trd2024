@@ -1,21 +1,21 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Slot : MonoBehaviour
 {
-    //ÎÒÊÇ±³°üÀïÃæµÄµÀ¾ß¸ñ×Ó
+    //æˆ‘æ˜¯èƒŒåŒ…é‡Œé¢çš„é“å…·æ ¼å­
     [SerializeField] private Text Num;
     public GoodsItem slotItem;
     public Image slotImage;
 
-    public void ShowNum()//ÏÔÊ¾µÀ¾ßÓµÓĞÊıÁ¿
+    public void ShowNum()//æ˜¾ç¤ºé“å…·æ‹¥æœ‰æ•°é‡
     {
         Num.text = slotItem.itemHeld.ToString();
     }
 
-    public void ItemOnClick()//¹ÒÔØµ½°´Å¥ÉÏ
+    public void ItemOnClick()//æŒ‚è½½åˆ°æŒ‰é’®ä¸Š
     {
         InventoryManager.UpdateItemInfo(slotItem.itemInfo, slotItem.itemHeld);
 

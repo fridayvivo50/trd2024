@@ -1,11 +1,11 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New GoodsItem", menuName = "Inventory/New GooldItem")]
 public class GoodsItem : ScriptableObject
 {
-    //ÎÒÊÇµÀ¾ß£¬´´½¨µÀ¾ßÊ±´´½¨ÎÒÕâ¸öÀàĞÍ
+    //æˆ‘æ˜¯é“å…·ï¼Œåˆ›å»ºé“å…·æ—¶åˆ›å»ºæˆ‘è¿™ä¸ªç±»å‹
     public string itemName;
     public Sprite itemSprite;
     public int itemHeld;

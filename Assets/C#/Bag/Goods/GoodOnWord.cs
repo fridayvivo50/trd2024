@@ -1,10 +1,10 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GoodOnWord : MonoBehaviour
 {
-    //ÊÀ½çÉÏÃæµÄµÀ¾ß
+    //ä¸–ç•Œä¸Šé¢çš„é“å…·
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))

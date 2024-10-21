@@ -1,4 +1,4 @@
-using System.Collections;
+锘縰sing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +6,6 @@ using UnityEngine;
 
 public class Inventory : ScriptableObject
 {
-    //我是背包，创建背包时用我这个类型
+    //鎴戞槸鑳屽寘锛屽垱寤鸿儗鍖呮椂鐢ㄦ垜杩欎釜绫诲瀷
     public List<GoodsItem> GoodsItems = new List<GoodsItem>();
 }
