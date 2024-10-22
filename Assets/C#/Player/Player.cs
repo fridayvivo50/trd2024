@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
 
     private bool isOneSide;
 
+    public bool isRun = false;
     public bool CanRun = true;
     public bool isDeath = false;
     void Start()
@@ -30,7 +31,7 @@ public class Player : MonoBehaviour
         if (!isDeath)
         {
             //Run();
-            if (CanRun)
+            if (CanRun && !isRun)
             {
                 RightRun();
             }
@@ -54,6 +55,7 @@ public class Player : MonoBehaviour
     {
         Vector2 playerVel = new Vector2(runSpeed, myRb2D.velocity.y);
         myRb2D.velocity = playerVel;
+        //isRun = true;
     }
     void CheckGround()//地面检测
     {
