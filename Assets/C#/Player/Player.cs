@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
 
     private bool isOneSide;
 
+    public bool CanRun = true;
     public bool isDeath = false;
     void Start()
     {
@@ -28,7 +29,11 @@ public class Player : MonoBehaviour
     {
         if (!isDeath)
         {
-            Run();
+            //Run();
+            if (CanRun)
+            {
+                RightRun();
+            }
             Filp();
             Jump();
             CheckGround();
@@ -45,7 +50,11 @@ public class Player : MonoBehaviour
             }
         }
     }
-
+    void RightRun()
+    {
+        Vector2 playerVel = new Vector2(runSpeed, myRb2D.velocity.y);
+        myRb2D.velocity = playerVel;
+    }
     void CheckGround()//地面检测
     {
         isGround = myFeet.IsTouchingLayers(LayerMask.GetMask("Ground")) || myFeet.IsTouchingLayers(LayerMask.GetMask("oneSideBoard"));
@@ -59,7 +68,6 @@ public class Player : MonoBehaviour
 
         }
     }
-
     void Filp()//翻转
     {
         bool playerXAxisSpeed = Mathf.Abs(myRb2D.velocity.x) > Mathf.Epsilon;
@@ -83,7 +91,6 @@ public class Player : MonoBehaviour
         //bool playerXAxisSpeed = Mathf.Abs(myRb2D.velocity.x) > Mathf.Epsilon;
         //myAnim.SetBool("Run", playerXAxisSpeed);
     }
-
     void Jump()
     {
         if (Input.GetButtonDown("Jump"))
@@ -120,7 +127,6 @@ public class Player : MonoBehaviour
 
 
     }
-
     void oneSideCheck()//单向板检测
     {
         if (isGround && gameObject.layer != LayerMask.NameToLayer("Player"))
