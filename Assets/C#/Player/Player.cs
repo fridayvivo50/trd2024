@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public float jumpChance;
     private Rigidbody2D myRb2D;
     private BoxCollider2D myFeet;
+    private CapsuleCollider2D myBody;
     private Animator myAnim;
     private TrailRenderer myTrail;
     private bool isGround;
@@ -24,12 +25,18 @@ public class Player : MonoBehaviour
     private bool isSliding = false;
     private bool isDodging = false;
     private bool isBoosting = false;
+
+    // 迷失度和清醒度参数
+    public int confusionLevel = 5;  // 初始迷失度为5
+    public int clarityLevel = 0;    // 初始清醒度为0
+
     void Start()
     {
         myRb2D = GetComponent<Rigidbody2D>();
         //myAnim = GetComponent<Animator>();
         myFeet = GetComponent<BoxCollider2D>();
         myTrail = GetComponent<TrailRenderer>();
+        myBody = GetComponent<CapsuleCollider2D>();
     }
 
     void Update()
@@ -68,6 +75,44 @@ public class Player : MonoBehaviour
                 CheckGround();
             }
         }
+
+        // 检查碰撞对象的tag来增加迷失度或清醒度
+        if (collision.gameObject.CompareTag("Harm2"))
+        {
+            confusionLevel += 2;  // 迷失度 +2
+            Debug.Log("迷失度增加2, 当前迷失度: " + confusionLevel);
+        }
+        else if (collision.gameObject.CompareTag("Harm3"))
+        {
+            confusionLevel += 3;  // 迷失度 +3
+            Debug.Log("迷失度增加3, 当前迷失度: " + confusionLevel);
+        }
+        else if (collision.gameObject.CompareTag("Harm4"))
+        {
+            confusionLevel += 4;  // 迷失度 +4
+            Debug.Log("迷失度增加4, 当前迷失度: " + confusionLevel);
+        }
+        else if (collision.gameObject.CompareTag("Harm5"))
+        {
+            confusionLevel += 5;  // 迷失度 +5
+            Debug.Log("迷失度增加5, 当前迷失度: " + confusionLevel);
+        }
+        else if (collision.gameObject.CompareTag("Good2"))
+        {
+            clarityLevel += 2;  // 清醒度 +2
+            Debug.Log("清醒度增加2, 当前清醒度: " + clarityLevel);
+        }
+        else if (collision.gameObject.CompareTag("Good5"))
+        {
+            clarityLevel += 5;  // 清醒度 +5
+            Debug.Log("清醒度增加5, 当前清醒度: " + clarityLevel);
+        }
+        else if (collision.gameObject.CompareTag("Good10"))
+        {
+            clarityLevel += 10;  // 清醒度 +10
+            Debug.Log("清醒度增加10, 当前清醒度: " + clarityLevel);
+        }
+
     }
 
     //正常向右奔跑
