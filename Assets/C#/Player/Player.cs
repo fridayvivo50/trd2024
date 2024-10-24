@@ -89,7 +89,7 @@ public class Player : MonoBehaviour
             clarityLevel += 1;  // 清醒度 +1
             Debug.Log("清醒度增加2, 当前清醒度: " + clarityLevel);
         }
-        else if (collision.gameObject.CompareTag("book") && !isDodging)//书页是harm3
+        else if (collision.gameObject.CompareTag("book") && !isDodging)//书页是good3
         {
             book++;
             clarityLevel += 3;  // 清醒度 +3
