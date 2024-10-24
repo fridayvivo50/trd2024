@@ -57,6 +57,7 @@ public class Player : MonoBehaviour
 
                 if (!isSliding)
                 {
+                    myRb2D.gravityScale = 1f;
                     Slide();
                 }
                 Boost();
@@ -226,6 +227,7 @@ public class Player : MonoBehaviour
         {
             isSliding = true;
             myAnim.SetBool("Fly", true);
+            myRb2D.gravityScale = 0.5f;
             //滑行动画启动  待补充
 
         }
