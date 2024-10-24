@@ -2586,14 +2586,6 @@ PrefabInstance:
       value: conin1 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 7754042912519793175, guid: a4d260681cda5b042bf160e37b23129f, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 7754042912519793175, guid: a4d260681cda5b042bf160e37b23129f, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 7754042912519793175, guid: a4d260681cda5b042bf160e37b23129f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 51.67
       objectReference: {fileID: 0}
@@ -2646,14 +2638,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1574369315012645431, guid: ff573f68ba099f64f981a7cf7b23fbac, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 1574369315012645431, guid: ff573f68ba099f64f981a7cf7b23fbac, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.07
-      objectReference: {fileID: 0}
     - target: {fileID: 1574369315012645431, guid: ff573f68ba099f64f981a7cf7b23fbac, type: 3}
       propertyPath: m_LocalPosition.x
       value: 58.83
