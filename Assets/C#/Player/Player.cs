@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        myAnim = GetComponent<Animator>();
         myRb2D = GetComponent<Rigidbody2D>();
         //myAnim = GetComponent<Animator>();
         myFeet = GetComponent<BoxCollider2D>();
@@ -77,37 +78,37 @@ public class Player : MonoBehaviour
         }
 
         // 检查碰撞对象的tag来增加迷失度或清醒度
-        if (collision.gameObject.CompareTag("Harm2"))
+        if (collision.gameObject.CompareTag("Harm2")&&!isDodging)
         {
             confusionLevel += 2;  // 迷失度 +2
             Debug.Log("迷失度增加2, 当前迷失度: " + confusionLevel);
         }
-        else if (collision.gameObject.CompareTag("Harm3"))
+        else if (collision.gameObject.CompareTag("Harm3") && !isDodging)
         {
             confusionLevel += 3;  // 迷失度 +3
             Debug.Log("迷失度增加3, 当前迷失度: " + confusionLevel);
         }
-        else if (collision.gameObject.CompareTag("Harm4"))
+        else if (collision.gameObject.CompareTag("Harm4") && !isDodging)
         {
             confusionLevel += 4;  // 迷失度 +4
             Debug.Log("迷失度增加4, 当前迷失度: " + confusionLevel);
         }
-        else if (collision.gameObject.CompareTag("Harm5"))
+        else if (collision.gameObject.CompareTag("Harm5") && !isDodging)
         {
             confusionLevel += 5;  // 迷失度 +5
             Debug.Log("迷失度增加5, 当前迷失度: " + confusionLevel);
         }
-        else if (collision.gameObject.CompareTag("Good2"))
+        else if (collision.gameObject.CompareTag("Good2") && !isDodging)
         {
             clarityLevel += 2;  // 清醒度 +2
             Debug.Log("清醒度增加2, 当前清醒度: " + clarityLevel);
         }
-        else if (collision.gameObject.CompareTag("Good5"))
+        else if (collision.gameObject.CompareTag("Good5") && !isDodging)
         {
             clarityLevel += 5;  // 清醒度 +5
             Debug.Log("清醒度增加5, 当前清醒度: " + clarityLevel);
         }
-        else if (collision.gameObject.CompareTag("Good10"))
+        else if (collision.gameObject.CompareTag("Good10") && !isDodging)
         {
             clarityLevel += 10;  // 清醒度 +10
             Debug.Log("清醒度增加10, 当前清醒度: " + clarityLevel);
@@ -118,7 +119,10 @@ public class Player : MonoBehaviour
     //正常向右奔跑
     void RightRun()
     {
-        //动画
+        if (myAnim != null)
+        {
+            myAnim.SetBool("isRunning", true);  // 启动run动画
+        }
         Vector2 playerVel = new Vector2(runSpeed, myRb2D.velocity.y);
         myRb2D.velocity = playerVel;
         //isRun = true;

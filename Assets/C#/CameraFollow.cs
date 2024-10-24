@@ -4,29 +4,35 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform target;
+    public Transform target;  
     public float smooth;
+    public Vector2 minPosition; 
+    public Vector2 maxPosition; 
+    private float fixedY; 
 
-    public Vector2 minPosition;
-    public Vector2 maxPosition;
+
     void Start()
     {
+        fixedY = transform.position.y;
     }
+
     private void LateUpdate()
     {
         if (target != null)
         {
-            if (transform.position != target.position)
+            // 如果相机位置与目标位置不同，进行平滑跟随
+            if (transform.position.x != target.position.x)
             {
-                Vector3 targetPos = target.position;
+                Vector3 targetPos = new Vector3(target.position.x, fixedY, transform.position.z);
+
                 targetPos.x = Mathf.Clamp(targetPos.x, minPosition.x, maxPosition.x);
-                targetPos.y = Mathf.Clamp(targetPos.y, minPosition.y, maxPosition.y);
 
                 transform.position = Vector3.Lerp(transform.position, targetPos, smooth);
             }
         }
     }
 
+    //边界
     public void SetCampPosLimit(Vector2 minPos, Vector2 maxPox)
     {
         minPosition = minPos;

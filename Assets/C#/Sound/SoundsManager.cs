@@ -24,7 +24,7 @@ public class SoundsManager : MonoBehaviour
     }
     private void Start()
     {
-        PlayMusic("Bgm");
+        PlayMusic("bgm");
     }
     public void PlayMusic(string name)
     {
@@ -33,6 +33,7 @@ public class SoundsManager : MonoBehaviour
         {
             musicSource.clip = s.clip;
             musicSource.Play();
+            musicSource.loop = true;
         }
     }
     public void SfxPlay(string name)
