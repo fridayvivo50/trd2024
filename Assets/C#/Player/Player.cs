@@ -108,7 +108,7 @@ public class Player : MonoBehaviour
     {
         if (myAnim != null)
         {
-            myAnim.SetBool("isRunning", true);  // 启动run动画
+            myAnim.SetBool("Run", true);  // 启动run动画
         }
         Vector2 playerVel = new Vector2(runSpeed, myRb2D.velocity.y);
         myRb2D.velocity = playerVel;
@@ -143,6 +143,9 @@ public class Player : MonoBehaviour
             if (myRb2D.velocity.y <= 0.1f)
             {
                 jumpChance = 2;
+                myAnim.SetBool("Jump", false);
+                isSliding = false;
+                myAnim.SetBool("Fly", false);
             }
 
         }
@@ -188,12 +191,15 @@ public class Player : MonoBehaviour
                 jumpChance--;
                 Vector2 jumpVel = new Vector2(0.0f, jumpSpeed);
                 myRb2D.velocity = jumpVel * Vector2.up;
+                ClearAnimator();
+                myAnim.SetBool("Jump", true);
             }
             else if (jumpChance == 1)
             {
                 jumpChance--;
                 Vector2 jumpVel = new Vector2(0.0f, jumpSpeed);
                 myRb2D.velocity = jumpVel * Vector2.up;
+                myAnim.SetBool("Jump", true);
             }
 
         }
@@ -201,7 +207,7 @@ public class Player : MonoBehaviour
         {
             if (myRb2D.velocity.y <= 0.0f)
             {
-                //动画机待补全
+                ClearAnimator();
             }
         }
         if (jumpChance == 1)
@@ -216,10 +222,10 @@ public class Player : MonoBehaviour
     //滑行技能
     void Slide()
     {
-        if (Input.GetKeyDown(KeyCode.S) && !isSliding && isGround)
+        if (Input.GetKeyDown(KeyCode.S) && !isSliding && !isGround)
         {
             isSliding = true;
-
+            myAnim.SetBool("Fly", true);
             //滑行动画启动  待补充
 
         }
@@ -227,7 +233,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.S) && isSliding)
         {
             isSliding = false;
-
+            myAnim.SetBool("Fly", false);
             // 退出滑行动画  待补充
 
         }
@@ -246,6 +252,7 @@ public class Player : MonoBehaviour
         isDodging = true;
 
         //切换到闪躲动画 待补充
+        myAnim.SetBool("Miss", true);
 
         float currentSpeed = myRb2D.velocity.x;
 
@@ -271,6 +278,7 @@ public class Player : MonoBehaviour
         }
 
         //关闭闪烁动画
+        myAnim.SetBool("Miss", false);
         isDodging = false;
     }
 
@@ -295,5 +303,14 @@ public class Player : MonoBehaviour
             gameObject.layer = LayerMask.NameToLayer("Player");
         }
 
+    }
+
+    void ClearAnimator()
+    {
+        myAnim.SetBool("Run", false); 
+        myAnim.SetBool("Jump", false);
+        myAnim.SetBool("Miss", false);
+        myAnim.SetBool("Fly", false);
+        myAnim.SetBool("Dizz", false);
     }
 }
