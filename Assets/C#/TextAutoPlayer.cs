@@ -11,11 +11,11 @@ public class TextAutoPlayer : MonoBehaviour
     public float displayDuration = 3f; // 每段文字显示的时间  
     public float fadeDuration = 0.5f;  // 渐入/渐出效果的持续时间  
     private string[] textLines;
-    private int currentIndex = -1; // 初始化为-1，以便在第一次时触发渐入  
+    private int currentIndex = -1;
     private bool isFading = false;
     private bool isDisplaying;
-    private bool isFirstRun = true; // 标记是否是首次运行  
-    private bool allTextPlayed = false; // 标记是否所有文字都已播放完毕  
+    private bool isFirstRun = true; 
+    private bool allTextPlayed = false; 
 
     private void OnEnable()
     {
@@ -26,14 +26,7 @@ public class TextAutoPlayer : MonoBehaviour
             {
                 StartCoroutine(DisplayText());
             }
-            else
-            {
-                //Debug.LogError("TextAsset is empty or contains only whitespace lines!");
-            }
-        }
-        else
-        {
-            //Debug.LogError("TextAsset or Text component is not assigned!");
+
         }
     }
 
@@ -58,9 +51,7 @@ public class TextAutoPlayer : MonoBehaviour
                     {
                         displayTimeElapsed += Time.deltaTime;
                         yield return null;
-                    }
-
-                    // 显示时间结束后，开始渐出效果  
+                    } 
                     if (!isFading)
                     {
                         StartCoroutine(FadeOutText());
@@ -74,7 +65,6 @@ public class TextAutoPlayer : MonoBehaviour
                 yield return null;
             }
 
-            // 渐出效果完成后，如果是最后一段文字，则设置allTextPlayed为true并结束循环  
             if (currentIndex < textLines.Length - 1)
             {
                 StartCoroutine(FadeInText(textLines[currentIndex + 1]));
@@ -82,7 +72,6 @@ public class TextAutoPlayer : MonoBehaviour
             }
             else
             {
-                // 最后一段文字，只渐入不显示下一段  
                 StartCoroutine(FadeInText(textLines[currentIndex]));
                 allTextPlayed = true; 
                 gameObject.SetActive(false);  
@@ -106,9 +95,9 @@ public class TextAutoPlayer : MonoBehaviour
             yield return null;
         }
 
-        textDisplay.color = new Color(fadeColor.r, fadeColor.g, fadeColor.b, 0f); // 确保最终透明度为0  
+        textDisplay.color = new Color(fadeColor.r, fadeColor.g, fadeColor.b, 0f); 
         isFading = false;
-        isDisplaying = false; // 重置显示状态  
+        isDisplaying = false;  
     }
 
     private IEnumerator FadeInText(string text)
@@ -130,6 +119,6 @@ public class TextAutoPlayer : MonoBehaviour
         }
 
         textDisplay.color = new Color(fadeColor.r, fadeColor.g, fadeColor.b, 1f); // 确保最终透明度为1  
-        isFading = false; // 渐入完成  
+        isFading = false;  
     }
 }

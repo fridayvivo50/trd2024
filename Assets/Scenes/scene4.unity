@@ -860,6 +860,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Text: {fileID: 1363718584}
+  LoseText: {fileID: 0}
+  AimBookNum: 0
 --- !u!61 &1230714824
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1469,6 +1471,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 926193554205038792, guid: 72551aa0d57b78b4aadf2a837a7bf4c0, type: 3}
+      propertyPath: clarityLevel
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 926193554205038792, guid: 72551aa0d57b78b4aadf2a837a7bf4c0, type: 3}
+      propertyPath: confusionLevel
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6810162149739423383, guid: 72551aa0d57b78b4aadf2a837a7bf4c0, type: 3}
       propertyPath: m_Name
       value: "Player\uFF08True)"
