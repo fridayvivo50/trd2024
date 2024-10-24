@@ -5,6 +5,7 @@ using UnityEngine;
 public class good1 : MonoBehaviour
 {
     private CircleCollider2D thing;
+    [SerializeField] private GameObject Text;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +20,15 @@ public class good1 : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("collide");
-        // ÅĞ¶ÏÅö×²µÄ¶ÔÏóÊÇ·ñÊÇ±êÇ©Îª"Player"µÄ¶ÔÏó
+        // åˆ¤æ–­ç¢°æ’çš„å¯¹è±¡æ˜¯å¦æ˜¯æ ‡ç­¾ä¸º"Player"çš„å¯¹è±¡
         if (collision.gameObject.CompareTag("Player"))
         {
-            // ÉèÖÃµ±Ç°ÎïÌåÎª²»¿É¼û»òÎŞĞ§
-            gameObject.SetActive(false);  // ½«×ÔÉíÉèÎªÎŞĞ§
+            if(Text!= null)
+            {
+                Text.SetActive(true);
+            }
+            // è®¾ç½®å½“å‰ç‰©ä½“ä¸ºä¸å¯è§æˆ–æ— æ•ˆ
+            gameObject.SetActive(false);  // å°†è‡ªèº«è®¾ä¸ºæ— æ•ˆ
         }
     }
 }

@@ -8,6 +8,9 @@ TagManager:
   - Good2
   - harm2
   - book
+  - Harm2
+  - Good1
+  - Good10
   layers:
   - Default
   - TransparentFX

@@ -45,6 +45,7 @@ public class DialongSys : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.F) && index == textList.Count)
         {
             if(changescene) { SceneManager.LoadScene(sceneNum); }
+            FadeManager.InstanceF.FadeOut();
             gameObject.SetActive(false);
             index = 0;
         }

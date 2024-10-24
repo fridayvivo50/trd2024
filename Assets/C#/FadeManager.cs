@@ -7,6 +7,10 @@ public class FadeManager : MonoBehaviour
     public static FadeManager InstanceF;
     private Animator myAnimator;
 
+    private void Awake()
+    {
+        if(InstanceF == null) { InstanceF = this; }
+    }
     private void Start()
     {
         myAnimator = GetComponent<Animator>();
