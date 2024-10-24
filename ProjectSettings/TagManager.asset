@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Good2
+  - harm2
+  - book
   layers:
   - Default
   - TransparentFX

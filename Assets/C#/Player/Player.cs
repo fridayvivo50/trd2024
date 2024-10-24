@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     // 迷失度和清醒度参数
     public int confusionLevel = 5;  // 初始迷失度为5
     public int clarityLevel = 0;    // 初始清醒度为0
-
+    public int book = 0;
     void Start()
     {
         myAnim = GetComponent<Animator>();
@@ -83,35 +83,17 @@ public class Player : MonoBehaviour
             confusionLevel += 2;  // 迷失度 +2
             Debug.Log("迷失度增加2, 当前迷失度: " + confusionLevel);
         }
-        else if (collision.gameObject.CompareTag("Harm3") && !isDodging)
+        
+        else if (collision.gameObject.CompareTag("Good1") && !isDodging)
         {
-            confusionLevel += 3;  // 迷失度 +3
-            Debug.Log("迷失度增加3, 当前迷失度: " + confusionLevel);
-        }
-        else if (collision.gameObject.CompareTag("Harm4") && !isDodging)
-        {
-            confusionLevel += 4;  // 迷失度 +4
-            Debug.Log("迷失度增加4, 当前迷失度: " + confusionLevel);
-        }
-        else if (collision.gameObject.CompareTag("Harm5") && !isDodging)
-        {
-            confusionLevel += 5;  // 迷失度 +5
-            Debug.Log("迷失度增加5, 当前迷失度: " + confusionLevel);
-        }
-        else if (collision.gameObject.CompareTag("Good2") && !isDodging)
-        {
-            clarityLevel += 2;  // 清醒度 +2
+            clarityLevel += 1;  // 清醒度 +1
             Debug.Log("清醒度增加2, 当前清醒度: " + clarityLevel);
         }
-        else if (collision.gameObject.CompareTag("Good5") && !isDodging)
+        else if (collision.gameObject.CompareTag("book") && !isDodging)//书页是harm3
         {
-            clarityLevel += 5;  // 清醒度 +5
+            book++;
+            clarityLevel += 3;  // 清醒度 +3
             Debug.Log("清醒度增加5, 当前清醒度: " + clarityLevel);
-        }
-        else if (collision.gameObject.CompareTag("Good10") && !isDodging)
-        {
-            clarityLevel += 10;  // 清醒度 +10
-            Debug.Log("清醒度增加10, 当前清醒度: " + clarityLevel);
         }
 
     }

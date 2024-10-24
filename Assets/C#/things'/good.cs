@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class good2 : MonoBehaviour
+public class good1 : MonoBehaviour
 {
     private CircleCollider2D thing;
     // Start is called before the first frame update
