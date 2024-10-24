@@ -95,6 +95,11 @@ public class Player : MonoBehaviour
             clarityLevel += 3;  // 清醒度 +3
             Debug.Log("清醒度增加5, 当前清醒度: " + clarityLevel);
         }
+        else if (collision.gameObject.CompareTag("Good10") && !isDodging)
+        {
+            clarityLevel += 10;  // 清醒度 +10
+            Debug.Log("清醒度增加10, 当前清醒度: " + clarityLevel);
+        }
 
     }
 
