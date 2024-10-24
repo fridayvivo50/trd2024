@@ -82,6 +82,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Harm2")&&!isDodging)
         {
             confusionLevel += 2;  // 迷失度 +2
+            myAnim.SetTrigger("Dizz");
             Debug.Log("迷失度增加2, 当前迷失度: " + confusionLevel);
         }
         
@@ -100,6 +101,10 @@ public class Player : MonoBehaviour
         {
             clarityLevel += 10;  // 清醒度 +10
             Debug.Log("清醒度增加10, 当前清醒度: " + clarityLevel);
+        }
+        else if (collision.gameObject.CompareTag("Good2") && !isDodging)
+        {
+            clarityLevel += 2;
         }
 
     }
