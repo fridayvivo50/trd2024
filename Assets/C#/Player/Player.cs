@@ -113,6 +113,7 @@ public class Player : MonoBehaviour
             clarityLevel += 10;  // 清醒度 +10
             Debug.Log("清醒度增加10, 当前清醒度: " + clarityLevel);
         }
+        else { }
 
     }
 
