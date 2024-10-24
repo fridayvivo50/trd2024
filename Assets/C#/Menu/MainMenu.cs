@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] GameObject Text;
     public void PlayGame()
     {
-        SceneManager.LoadScene(1);
+        FadeManager.InstanceF.FadeIn();
+        Text.SetActive(true);
     }
     public void QuitGame()
     {
