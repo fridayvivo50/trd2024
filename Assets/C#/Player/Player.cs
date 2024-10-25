@@ -82,9 +82,14 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.CompareTag("Harm") && !isDodging)//叶子
+        {
+            confusionLevel += 1;  // 迷失度 +1
+            myAnim.SetTrigger("Dizz");
+            Debug.Log("迷失度增加2, 当前迷失度: " + confusionLevel);
+        }
         // 检查碰撞对象的tag来增加迷失度或清醒度
-        if (collision.gameObject.CompareTag("Harm2") && !isDodging)
+        if (collision.gameObject.CompareTag("Harm2") && !isDodging)//火加了4 闪电+2
         {
             confusionLevel += 2;  // 迷失度 +2
             myAnim.SetTrigger("Dizz");
@@ -254,7 +259,7 @@ public class Player : MonoBehaviour
     //躲避技能
     void Dodge()
     {
-        if (Input.GetKeyDown(KeyCode.A) && !isDodging && isGround)
+        if (Input.GetKeyDown(KeyCode.A) && !isDodging)
         {
             StartCoroutine(DodgeCoroutine());
         }
