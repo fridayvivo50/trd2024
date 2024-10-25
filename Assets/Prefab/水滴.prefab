@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2343688394862872116}
   m_Layer: 0
   m_Name: "\u6C34\u6EF4"
-  m_TagString: Good2
+  m_TagString: Good1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,7 +131,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.25883678, y: 0.08211541}

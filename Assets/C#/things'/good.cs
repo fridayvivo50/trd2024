@@ -17,7 +17,7 @@ public class good1 : MonoBehaviour
     {
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         //Debug.Log("collide");
         // 判断碰撞的对象是否是标签为"Player"的对象

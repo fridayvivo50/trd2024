@@ -78,23 +78,28 @@ public class Player : MonoBehaviour
             }
         }
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
         // 检查碰撞对象的tag来增加迷失度或清醒度
-        if (collision.gameObject.CompareTag("Harm2")&&!isDodging)
+        if (collision.gameObject.CompareTag("Harm2") && !isDodging)
         {
             confusionLevel += 2;  // 迷失度 +2
             myAnim.SetTrigger("Dizz");
             Debug.Log("迷失度增加2, 当前迷失度: " + confusionLevel);
         }
-        
-        else if (collision.gameObject.CompareTag("Good1") && !isDodging)
+
+        else if (collision.gameObject.CompareTag("Good1") && !isDodging)//水滴
         {
             clarityLevel += 1;  // 清醒度 +1
             Debug.Log("清醒度增加2, 当前清醒度: " + clarityLevel);
         }
-        else if (collision.gameObject.CompareTag("book") && !isDodging)//书页是good3
+        else if (collision.gameObject.CompareTag("book") && !isDodging)//书页是good2
         {
             book++;
-            clarityLevel += 3;  // 清醒度 +3
+            clarityLevel += 2;  // 清醒度 +2
             Debug.Log("清醒度增加5, 当前清醒度: " + clarityLevel);
         }
         else if (collision.gameObject.CompareTag("Good10") && !isDodging)
@@ -189,7 +194,7 @@ public class Player : MonoBehaviour
     //跳跃技能
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W)&&!isSliding)
         {
             if (jumpChance == 2)
             {
