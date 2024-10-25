@@ -11,6 +11,7 @@ TagManager:
   - Harm2
   - Good1
   - Good10
+  - Harm
   layers:
   - Default
   - TransparentFX
