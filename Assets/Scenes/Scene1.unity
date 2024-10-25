@@ -942,10 +942,10 @@ PrefabInstance:
     - target: {fileID: 4564402984532662130, guid: 04decc8a5265690438642b3bca8f2b5b, type: 3}
       propertyPath: Text
       value: 
-      objectReference: {fileID: 1349714298}
+      objectReference: {fileID: 2129767597}
     - target: {fileID: 9036423556398949179, guid: 04decc8a5265690438642b3bca8f2b5b, type: 3}
       propertyPath: m_Name
-      value: "\u4E66\u9875_C2"
+      value: "\u4E66\u9875_C3"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1668,6 +1668,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TextAuto_C3
       objectReference: {fileID: 0}
+    - target: {fileID: 1894027524902837420, guid: ebd056f3430d3ee4ab3a2d67e1b968da, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3557041154224298426, guid: ebd056f3430d3ee4ab3a2d67e1b968da, type: 3}
       propertyPath: textFile
       value: 
@@ -2041,10 +2045,10 @@ PrefabInstance:
     - target: {fileID: 4564402984532662130, guid: 04decc8a5265690438642b3bca8f2b5b, type: 3}
       propertyPath: Text
       value: 
-      objectReference: {fileID: 2129767597}
+      objectReference: {fileID: 1349714298}
     - target: {fileID: 9036423556398949179, guid: 04decc8a5265690438642b3bca8f2b5b, type: 3}
       propertyPath: m_Name
-      value: "\u4E66\u9875_C3"
+      value: "\u4E66\u9875_C2"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3120,6 +3124,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TextAuto_C2
       objectReference: {fileID: 0}
+    - target: {fileID: 1894027524902837420, guid: ebd056f3430d3ee4ab3a2d67e1b968da, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3557041154224298426, guid: ebd056f3430d3ee4ab3a2d67e1b968da, type: 3}
       propertyPath: textFile
       value: 
@@ -4159,8 +4167,8 @@ SceneRoots:
   - {fileID: 487508097}
   - {fileID: 1596189717}
   - {fileID: 7593260632627543326}
-  - {fileID: 370233748}
   - {fileID: 1016061972}
+  - {fileID: 370233748}
   - {fileID: 199882091}
   - {fileID: 381747080}
   - {fileID: 666189742}
